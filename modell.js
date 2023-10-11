@@ -6,22 +6,19 @@ const model = {
     app: {
         
     },
-    
+
     input:{
         newItem: {
             item: "",
             number: 1,
-        },
-
-
-        // inputField: "",
-
+        }
     },
+    
     data: {
         shoppingList: [
             {
                 item: "bread",
-                number: 1,
+                number: 4,
             },
             {
                 item: "apple",
@@ -30,5 +27,3 @@ const model = {
         ]
     },
 }
-
-
