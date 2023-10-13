@@ -2,19 +2,26 @@
 
 function add() {
     const userInput = document.getElementById('user-input');
+    const userInputAmount = document.getElementById('user-input-amount');
     let newItemValue = userInput.value;
+    let newItemAmount = userInputAmount.value;
+
+    if (newItemValue === "") {
+        alert("DU MÅ SKRIVE INN NOE!!")
+        return
+    }
 
     const newItem = {
         item: newItemValue,
-        number: 1
+        number: (newItemAmount || 1)
     };
 
     model.data.shoppingList.push(newItem);
 
     newItemValue = '';
     
-    
     updateView()
+    document.getElementById("user-input").focus()
 }
 
 function removeAll() {
@@ -23,37 +30,23 @@ function removeAll() {
     updateView()
 }
 
+
+
+
 function deleteItem(event) {
-    // console.log(event.target.parentElement)
+
+    const i = event.parentElement.id
+
     model.data.shoppingList.splice([i], 1)
+
+    updateView()
 }
 
-console.log(model.data.shoppingList.findIndex(indexcheck));
+function edit() {
+    const i = event.parentElement.id
+    console.log(event.parentElement.id)
 
-function indexcheck(value) {
-return value>="bread";
+    userInput = model.data.shoppingList[i].item
+    userInputAmount = model.data.shoppingList[i].number
+
 }
-
-
-
-
-Array.find
-
-
-
-
-
-
-
-
-
-
-
-
-// function add() {
-//     model.userInput.newItem.item = document.getElementById('userInput').value
-
-//     model.data.shoppingList.push(model.userInput.newItem)
-//     // console.log(model.data.shoppingList)
-//     updateView()
-// }

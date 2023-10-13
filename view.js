@@ -2,8 +2,9 @@
 updateView()
 function updateView() {
 let html = /*HTML*/ `
-<h1>DETTE ER EN liste</h1>
-<input autofocus="true" id="user-input" onchange="add()" type="text" placeholder="legg til task">
+<h1>Banan Liste</h1>
+<input autofocus="true" id="user-input" onchange="add()" type="text" placeholder="legg til task" >
+<input id="user-input-amount" placeholder="1" type="number" min="1">
 <button onclick="add()">Legg til</button>
 <button onclick="removeAll()">Fjern alt</button>
 
@@ -24,10 +25,10 @@ function updateList(){
     let listFeed = [];
 
     for(let i = 0; i < model.data.shoppingList.length; i++) {
-        
-        listFeed += `<li>${model.data.shoppingList[i].item}<button onclick="deleteItem(this)">Fjern</button></li>`
-    
-    // console.log(i + " " + model.data.shoppingList[i].item)
+        listFeed += /*HTML*/`<li id=${i}>${model.data.shoppingList[i].item} x ${model.data.shoppingList[i].number} 
+        <button onclick="deleteItem(this)">Fjern</button>
+        <button onclick="edit()">Endre</button>
+        </li>`
     }
     
     return listFeed;

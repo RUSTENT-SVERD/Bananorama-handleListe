@@ -14,6 +14,7 @@ const model = {
         }
     },
     
+    
     data: {
         shoppingList: [
             {
@@ -27,3 +28,6 @@ const model = {
         ]
     },
 }
+// localStorage.setItem("shoppingList", model.data.shoppingList.item)
+
+// console.log(localStorage.getItem(model.data.shoppingList))
