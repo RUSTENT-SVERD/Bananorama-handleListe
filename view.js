@@ -3,7 +3,7 @@ updateView()
 function updateView() {
 let html = /*HTML*/ `
 <h1>Banan Liste</h1>
-<input autofocus="true" id="user-input" onchange="add()" type="text" placeholder="legg til vare" >
+<input autofocus="true" id="user-input" onchange="" type="text" placeholder="legg til vare" >
 <input id="user-input-amount" placeholder="1" type="number" min="1">
 <button onclick="add()">Legg til</button>
 <button onclick="removeAll()">Fjern alt</button>
