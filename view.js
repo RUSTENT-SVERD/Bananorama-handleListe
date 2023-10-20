@@ -14,10 +14,13 @@ app.innerHTML = html
 function updateList(){
     let listFeed = [];
     for(let i = 0; i < model.data.shoppingList.length; i++) {
-        listFeed += /*HTML*/`<li id=${i}>${model.data.shoppingList[i].item} x ${model.data.shoppingList[i].number} 
+        listFeed += /*HTML*/`<li class="list" id=${i}>${model.data.shoppingList[i].item} x ${model.data.shoppingList[i].number} 
         <button onclick="deleteItem(this)">Fjern</button>
-        <!--<button onclick="edit()">Endre</button>-->
+        <button onclick="addOne(this)">+1</button>
+        <button onclick="subtractOne(this)">-1</button>
         </li>
         `}
     return listFeed;
 }
+
+//; if(model.data.shoppingList[this.parentElement.id].number===0){this.parentElement.remove(); console.log('KANSKJE DET FUNKER FOR FAEN!!!')} else {console.log('FUCK!')}

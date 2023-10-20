@@ -9,3 +9,6 @@ footer {
     text-align: center;
     background-color: grey;
 }
+.list {
+    padding: 0.5vh;
+}
